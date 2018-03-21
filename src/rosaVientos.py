@@ -51,11 +51,11 @@ class graficar():
     def polarGraf(self):
         ax = plt.axes([0.025, 0.025, 0.95, 0.95], polar=True)
         print("Polar axes = ",ax)
-        N = 20
+        N = 10
         theta = np.arange(0.0, 2 * np.pi, 2 * np.pi / N)
         print("theta",theta)
         radii = 10 * np.random.rand(N)
-        print("radii",radii)
+        print("radii",radii, len(radii))
         width = np.pi / 4 * np.random.rand(N)
         print("width",width)
         bars = plt.bar(theta, radii, width=width, bottom=0.0)
@@ -63,7 +63,7 @@ class graficar():
         for r, bar in zip(radii, bars):
             bar.set_facecolor(plt.cm.jet(r / 10.))
             bar.set_alpha(0.5)
-
+        plt.show()
         ax.set_xticklabels([])
         ax.set_yticklabels([])
         plt.show()
